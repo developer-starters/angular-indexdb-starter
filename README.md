@@ -1,6 +1,23 @@
-# AngularIndexdbStarter
+# Angular Indexdb Starter Kit
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.4.
+### Tools Supported
+
+- [Angular](https://angular.dev/)
+- [PNPM](https://pnpm.io/)
+- [indexDB](https://developer.chrome.com/docs/devtools/storage/indexeddb)
+- [Idb](https://www.npmjs.com/package/idb) to interact with IndexDB in Browser.
+
+### Purpose Solved
+
+- Angular App needed for Offline Support
+- Angular App that utilizes the indexDB Browser DB API to persist data in browser instead of localStorag/SessionStorage
+
+### Usecases where it can be used
+- Requirement is to store data within browser for offline sync
+- Progressive Web Apps
+
+### Restrictions
+- Works only with Browsers having support for IndexDB API
 
 ## Development server
 
