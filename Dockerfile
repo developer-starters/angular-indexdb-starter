@@ -17,8 +17,10 @@ FROM node:${NODE_VERSION}-alpine as base
 WORKDIR /usr/src/app
 
 # Install pnpm.
-RUN --mount=type=cache,target=/root/.npm \
-    npm install -g pnpm@${PNPM_VERSION}
+RUN --mount=type=cache,target=/root/.npm npm install -g pnpm@${PNPM_VERSION}
+
+# Install Angular CLI
+RUN --mount=type=cache,target=/root/.npm npm install -g @angular/cli
 
 ################################################################################
 # Create a stage for installing production dependecies.
