@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { IndexdbService } from '../services/indexdb.service';
+import { TodosComponent } from "../todos/todos.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, TodosComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass'
 })
@@ -18,5 +19,5 @@ export class AppComponent {
     this.indexDb.connectToDb();
   }
 
-  title = 'angular-indexdb-starter';
+  title = 'Angular With IndexDB';
 }
