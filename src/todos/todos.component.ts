@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 interface Todo {
   id: number;
   text: string;
@@ -7,13 +9,14 @@ interface Todo {
 @Component({
   selector: 'app-todos',
   standalone: true,
-  imports: [],
+  imports: [FontAwesomeModule],
   templateUrl: './todos.component.html',
   styleUrl: './todos.component.sass'
 })
 export class TodosComponent {
 todos: Todo[] = [];
   newTodoText = '';
+  faCoffee = faCoffee;
 
   addTodo() {
     // Add new todo logic

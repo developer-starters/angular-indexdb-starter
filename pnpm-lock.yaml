@@ -29,6 +29,12 @@ dependencies:
   '@angular/router':
     specifier: ^18.1.0
     version: 18.1.4(@angular/common@18.1.4)(@angular/core@18.1.4)(@angular/platform-browser@18.1.4)(rxjs@7.8.1)
+  '@fortawesome/angular-fontawesome':
+    specifier: ^0.15.0
+    version: 0.15.0(@angular/core@18.1.4)
+  '@fortawesome/free-solid-svg-icons':
+    specifier: ^6.6.0
+    version: 6.6.0
   idb:
     specifier: ^8.0.0
     version: 8.0.0
@@ -2059,6 +2065,35 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@fortawesome/angular-fontawesome@0.15.0(@angular/core@18.1.4):
+    resolution: {integrity: sha512-oxmJDYGNSym5ycFR0LX4ZOPAU+wWmMAznYpkm5DNAtWWkhMLcrZl15eZQmVIEE+qruQ7JiVrg3tpo8bEkFlDgw==}
+    peerDependencies:
+      '@angular/core': ^18.0.0
+    dependencies:
+      '@angular/core': 18.1.4(rxjs@7.8.1)(zone.js@0.14.10)
+      '@fortawesome/fontawesome-svg-core': 6.6.0
+      tslib: 2.6.3
+    dev: false
+
+  /@fortawesome/fontawesome-common-types@6.6.0:
+    resolution: {integrity: sha512-xyX0X9mc0kyz9plIyryrRbl7ngsA9jz77mCZJsUkLl+ZKs0KWObgaEBoSgQiYWAsSmjz/yjl0F++Got0Mdp4Rw==}
+    engines: {node: '>=6'}
+    dev: false
+
+  /@fortawesome/fontawesome-svg-core@6.6.0:
+    resolution: {integrity: sha512-KHwPkCk6oRT4HADE7smhfsKudt9N/9lm6EJ5BVg0tD1yPA5hht837fB87F8pn15D8JfTqQOjhKTktwmLMiD7Kg==}
+    engines: {node: '>=6'}
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 6.6.0
+    dev: false
+
+  /@fortawesome/free-solid-svg-icons@6.6.0:
+    resolution: {integrity: sha512-IYv/2skhEDFc2WGUcqvFJkeK39Q+HyPf5GHUrT/l2pKbtgEIv1al1TKd6qStR5OIwQdN1GZP54ci3y4mroJWjA==}
+    engines: {node: '>=6'}
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 6.6.0
+    dev: false
 
   /@inquirer/checkbox@2.4.7:
     resolution: {integrity: sha512-5YwCySyV1UEgqzz34gNsC38eKxRBtlRDpJLlKcRtTjlYA/yDKuc1rfw+hjw+2WJxbAZtaDPsRl5Zk7J14SBoBw==}
