@@ -5,7 +5,7 @@
 - [Angular](https://angular.dev/)
 - [PNPM](https://pnpm.io/)
 - [indexDB](https://developer.chrome.com/docs/devtools/storage/indexeddb)
-- [Idb](https://www.npmjs.com/package/idb) to interact with IndexDB in Browser.
+- [Dexie](https://dexie.org/docs/Tutorial/Angular) to interact with IndexDB in Browser.
 
 ### Purpose Solved
 
