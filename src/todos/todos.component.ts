@@ -4,12 +4,7 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { FormsModule } from '@angular/forms';
 import { v4 as uuid } from 'uuid';
 import { IndexdbService } from '../services/indexdb.service';
-
-interface Todo {
-  id: string;
-  text: string;
-  completed: boolean;
-}
+import { Todo } from '../interfaces/todo';
 @Component({
   selector: 'app-todos',
   standalone: true,
