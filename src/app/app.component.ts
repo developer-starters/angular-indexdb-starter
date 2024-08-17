@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { IndexdbService } from '../services/indexdb.service';
 import { TodosComponent } from "../todos/todos.component";
 
 @Component({
@@ -11,13 +10,5 @@ import { TodosComponent } from "../todos/todos.component";
   styleUrl: './app.component.sass'
 })
 export class AppComponent {
-  constructor(private indexDb: IndexdbService){
-
-  }
-
-  ngOnInit(): void {
-    this.indexDb.connectToDb();
-  }
-
   title = 'Angular With IndexDB';
 }

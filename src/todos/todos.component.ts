@@ -13,24 +13,20 @@ import { Todo } from '../interfaces/todo';
   styleUrl: './todos.component.sass'
 })
 export class TodosComponent {
-  todos: Todo[] = [];
   newTodoText = '';
   faCoffee = faCoffee;
 
   constructor(public db: IndexdbService) {
     // Initialize todos from local storage or API
+    this.db.getTodos().then((todos) => {
+      console.log(todos);
+    });
   }
 
   addTodo() {
     // Add new todo logic
     console.log(`This is the new Todo Task Added ${this.newTodoText}`);
-    const newTodo: Todo = {
-      id: uuid(),
-      text: this.newTodoText,
-      completed: false
-    };
-    this.todos.push(newTodo);
-    this.db.addTodo(JSON.stringify(newTodo));
+    this.db.addTodo(this.newTodoText);
   }
 
   removeTodo(id: string) {
