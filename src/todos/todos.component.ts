@@ -43,7 +43,8 @@ export class TodosComponent {
     this.db.deleteTodo(id);
   }
 
-  toggleTodo(id: string) {
+  toggleTodo(todo: Todo) {
     // Toggle todo completion logic
+    todo.id ? this.db.toggleTodo(todo.id, !todo.completed) : undefined;
   }
 }

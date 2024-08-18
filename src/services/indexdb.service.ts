@@ -37,4 +37,8 @@ export class IndexdbService {
     return db.todo.put(updatedTodo, id);
   }
 
+  async toggleTodo(id: number, completed: boolean) {
+    return db.todo.update(id,{completed:completed});
+  }
+
 }
