@@ -2,15 +2,16 @@ import { Component } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { FormsModule } from '@angular/forms';
-import { v4 as uuid } from 'uuid';
 import { IndexdbService } from '../services/indexdb.service';
 import { Todo } from '../interfaces/todo';
 import { liveQuery } from 'dexie';
 import { CommonModule } from '@angular/common';
+import { MatDialog } from '@angular/material/dialog';
+import { UpdateTodoModalComponent } from '../update-todo-modal/update-todo-modal.component';
 @Component({
   selector: 'app-todos',
   standalone: true,
-  imports: [FontAwesomeModule, FormsModule, CommonModule],
+  imports: [FontAwesomeModule, FormsModule, CommonModule, UpdateTodoModalComponent],
   templateUrl: './todos.component.html',
   styleUrl: './todos.component.sass'
 })
@@ -19,7 +20,7 @@ export class TodosComponent {
   faCoffee = faCoffee;
   todos$;
 
-  constructor(public db: IndexdbService) {
+  constructor(public db: IndexdbService, private dialog: MatDialog) {
     // Initialize todos from local storage or API
     this.db.getTodos().then((todos) => {
       console.log(todos);
@@ -46,5 +47,18 @@ export class TodosComponent {
   toggleTodo(todo: Todo) {
     // Toggle todo completion logic
     todo.id ? this.db.toggleTodo(todo.id, !todo.completed) : undefined;
+  }
+
+  openModal(todo:Todo) {
+    const dialogRef = this.dialog.open(UpdateTodoModalComponent, {
+      width: '400px',
+      height: '300px',
+      data: todo
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed', result);
+      todo.id ? this.db.updateTodo(todo.id, result) : undefined;
+    });
   }
 }

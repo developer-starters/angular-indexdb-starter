@@ -28,17 +28,12 @@ export class IndexdbService {
     return db.todo.delete(id);
   }
 
-  async updateTodo(id: number, text?: string, completed?: boolean) {
-    const updatedTodo: Todo = {
-      id: id,
-      text: text ?? '',
-      completed: completed ?? false
-    };
-    return db.todo.put(updatedTodo, id);
+  async updateTodo(id: number, text: string) {
+    return db.todo.update(id, { text: text });
   }
 
   async toggleTodo(id: number, completed: boolean) {
-    return db.todo.update(id,{completed:completed});
+    return db.todo.update(id, { completed: completed });
   }
 
 }
