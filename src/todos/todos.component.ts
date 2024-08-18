@@ -49,16 +49,17 @@ export class TodosComponent {
     todo.id ? this.db.toggleTodo(todo.id, !todo.completed) : undefined;
   }
 
-  openModal(todo:Todo) {
+  openModal(todo: Todo) {
     const dialogRef = this.dialog.open(UpdateTodoModalComponent, {
-      width: '400px',
-      height: '300px',
+      panelClass: 'dialog-centered',
       data: todo
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed', result);
-      todo.id ? this.db.updateTodo(todo.id, result) : undefined;
+      if (result) {
+        todo.id ? this.db.updateTodo(todo.id, result) : undefined;
+      }
     });
   }
 }
