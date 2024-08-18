@@ -7,11 +7,10 @@ import { IndexdbService } from '../services/indexdb.service';
 import { Todo } from '../interfaces/todo';
 import { liveQuery } from 'dexie';
 import { CommonModule } from '@angular/common';
-import { UpdateTodoModalComponent } from '../update-todo-modal/update-todo-modal.component';
 @Component({
   selector: 'app-todos',
   standalone: true,
-  imports: [FontAwesomeModule, FormsModule, CommonModule, UpdateTodoModalComponent],
+  imports: [FontAwesomeModule, FormsModule, CommonModule],
   templateUrl: './todos.component.html',
   styleUrl: './todos.component.sass'
 })
