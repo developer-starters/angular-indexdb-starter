@@ -21,7 +21,7 @@
                     *ngFor="let todo of todos$ | async; trackBy: identifyList">
 
                     <label class="flex items-center">
-                        <input type="checkbox" class="mr-2" (click)="toggleTodo(todo)" [(ngModel)] = "todo.completed">
+                        <input type="checkbox" class="mr-2" (click)="toggleTodo(todo)" [(ngModel)]="todo.completed">
                         <span>{{todo.text}}</span>
                     </label>
                     <div>
@@ -35,3 +35,5 @@
         </div>
     </div>
 </div>
+
+<app-update-todo-modal />
