@@ -5,7 +5,7 @@ export class AppDb extends Dexie {
     todo!: Table<Todo, number>;
 
     constructor() {
-        super('ngdexieliveQuery');
+        super('AngularIndexDBStarter');
         this.version(3).stores({
             todo: '++id',
         });

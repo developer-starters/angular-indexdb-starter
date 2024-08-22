@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { db } from './app-db';
-import { Todo } from '../interfaces/todo';
 
 @Injectable({
   providedIn: 'root'
